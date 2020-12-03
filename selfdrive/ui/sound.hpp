@@ -6,12 +6,12 @@ typedef cereal::CarControl::HUDControl::AudibleAlert AudibleAlert;
 
 static std::map<AudibleAlert, std::pair<const char *, int>> sound_map {
   // AudibleAlert, (file path, loop count)
-  {AudibleAlert::CHIME_DISENGAGE, {"../assets/sounds/disengaged.wav", 0}},
-  {AudibleAlert::CHIME_ENGAGE, {"../assets/sounds/engaged.wav", 0}},
+  {AudibleAlert::CHIME_DISENGAGE, {"../assets/sounds/disengagedt.wav", 0}},
+  {AudibleAlert::CHIME_ENGAGE, {"../assets/sounds/engagedt.wav", 0}},
   {AudibleAlert::CHIME_WARNING1, {"../assets/sounds/warning_1.wav", 0}},
   {AudibleAlert::CHIME_WARNING2, {"../assets/sounds/warning_2.wav", 0}},
   {AudibleAlert::CHIME_WARNING2_REPEAT, {"../assets/sounds/warning_2.wav", 3}},
-  {AudibleAlert::CHIME_WARNING_REPEAT, {"../assets/sounds/warning_repeat.wav", 1}},
+  {AudibleAlert::CHIME_WARNING_REPEAT, {"../assets/sounds/warning_repeat.wav", 3}},
   {AudibleAlert::CHIME_ERROR, {"../assets/sounds/error.wav", 0}},
   {AudibleAlert::CHIME_PROMPT, {"../assets/sounds/error.wav", 0}},
   {AudibleAlert::CHIME_READY, {"../assets/sounds/ready.wav", 0}},
@@ -25,7 +25,14 @@ static std::map<AudibleAlert, std::pair<const char *, int>> sound_map {
   {AudibleAlert::CHIME_MODE_OPENPILOT, {"../assets/sounds/modeopenpilot.wav", 0}},
   {AudibleAlert::CHIME_MODE_DISTCURV, {"../assets/sounds/modedistcurv.wav", 0}},
   {AudibleAlert::CHIME_MODE_DISTANCE, {"../assets/sounds/modedistance.wav", 0}},
-  {AudibleAlert::CHIME_MODE_ONEWAY, {"../assets/sounds/modeoneway.wav", 0}}
+  {AudibleAlert::CHIME_MODE_ONEWAY, {"../assets/sounds/modeoneway.wav", 0}},
+  {AudibleAlert::CHIME_DISENGAGE2, {"../assets/sounds/disengaged.wav", 0}},
+  {AudibleAlert::CHIME_ENGAGE2, {"../assets/sounds/engaged.wav", 0}},
+  {AudibleAlert::CHIME_DING, {"../assets/sounds/ding.wav", 0}},
+  {AudibleAlert::CHIME_CALIBRATION1, {"../assets/sounds/calibration1.wav", 0}},
+  {AudibleAlert::CHIME_CALIBRATION2, {"../assets/sounds/calibration2.wav", 0}},
+  {AudibleAlert::CHIME_DISTRACTED, {"../assets/sounds/warning_distracted.wav", 0}},
+  {AudibleAlert::CHIME_VISION, {"../assets/sounds/vision.wav", 0}}
 };
 
 class Sound {

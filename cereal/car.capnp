@@ -378,6 +378,13 @@ struct CarControl {
       chimeModeDistcurv @18;
       chimeModeDistance @19;
       chimeModeOneway @20;
+      chimeCalibration1 @21;
+      chimeCalibration2 @22;
+      chimeDing @23;
+      chimeDistracted @24;
+      chimeEngage2 @25;
+      chimeDisengage2 @26;
+      chimeVision @27;
     }
   }
 }
