@@ -37,19 +37,19 @@ class CarInterface(CarInterfaceBase):
     OuterLoopGain = int(params.get('OuterLoopGain')) * 0.1
     TimeConstant = int(params.get('TimeConstant')) * 0.1
     ActuatorEffectiveness = int(params.get('ActuatorEffectiveness')) * 0.1
-    Scale = int(params.get('Scale')) * 1.0
-    LqrKi = int(params.get('LqrKi')) * 0.001
-    DcGain = int(params.get('DcGain')) * 0.0001
-    LqrSteerMaxV = int(params.get('SteerMaxvAdj')) * 0.1
+    Scale = 1680 #int(params.get('Scale')) * 1.0
+    LqrKi = 0.001 #int(params.get('LqrKi')) * 0.001
+    DcGain = 0.002858 #int(params.get('DcGain')) * 0.0001
+    LqrSteerMaxV = 1.8 #int(params.get('SteerMaxvAdj')) * 0.1
 
     # Most Hyundai car ports are community features for now
     ret.communityFeature = False
 
-    tire_stiffness_factor = int(params.get('TireStiffnessFactorAdj')) * 0.01
-    ret.steerActuatorDelay = int(params.get('SteerActuatorDelayAdj')) * 0.01
-    ret.steerRateCost = int(params.get('SteerRateCostAdj')) * 0.01
-    ret.steerLimitTimer = int(params.get('SteerLimitTimerAdj')) * 0.01
-    ret.steerRatio = int(params.get('SteerRatioAdj')) * 0.1
+    tire_stiffness_factor = 1.0 #int(params.get('TireStiffnessFactorAdj')) * 0.01
+    ret.steerActuatorDelay = 0.2 #int(params.get('SteerActuatorDelayAdj')) * 0.01
+    ret.steerRateCost = 0.555 #int(params.get('SteerRateCostAdj')) * 0.01
+    ret.steerLimitTimer = 2.0 #int(params.get('SteerLimitTimerAdj')) * 0.01
+    ret.steerRatio = 13.8 #int(params.get('SteerRatioAdj')) * 0.1
 
     ret.longitudinalTuning.kpBP = [0., 1., 10., 35.]
     ret.longitudinalTuning.kpV = [0.7, 0.8, 0.65, 0.55]
@@ -89,8 +89,8 @@ class CarInterface(CarInterfaceBase):
       ret.lateralTuning.lqr.a = [0., 1., -0.22619643, 1.21822268]
       ret.lateralTuning.lqr.b = [-1.92006585e-04, 3.95603032e-05]
       ret.lateralTuning.lqr.c = [1., 0.]
-      ret.lateralTuning.lqr.k = [-110., 451.]
-      ret.lateralTuning.lqr.l = [0.33, 0.318]
+      ret.lateralTuning.lqr.k = [-110.73572306, 451.22718255]
+      ret.lateralTuning.lqr.l = [0.3233671, 0.3185757]
       ret.lateralTuning.lqr.dcGain = DcGain
 
     if candidate in [CAR.SANTA_FE, CAR.SANTA_FE_2017]:
@@ -124,8 +124,8 @@ class CarInterface(CarInterfaceBase):
       ret.mass = 2060. + STD_CARGO_KG
       ret.wheelbase = 3.01
     elif candidate == CAR.GENESIS_G90:
-      ret.mass = 2060. + STD_CARGO_KG
-      ret.wheelbase = 3.01
+      ret.mass = 2120
+      ret.wheelbase = 3.16
     elif candidate in [CAR.KIA_OPTIMA, CAR.KIA_OPTIMA_HEV]:
       ret.mass = 1595. + STD_CARGO_KG
       ret.wheelbase = 2.80
